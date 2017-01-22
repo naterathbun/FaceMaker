@@ -11,18 +11,18 @@ namespace FaceMaker
     {
         static void Main(string[] args)
         {
-            Face gameFace = new Face();         // Instantiate the face object
-            DisplayIntro();                     // Splash Screen
+            Face gameFace = new Face();         
+            DisplayIntro();
 
-            while(true)
+            while (true)                        // Main game loop
             {
-                gameFace.DisplayFace();         // Prints latest face
-                DisplayMenu();                  // Main Menu
+                gameFace.DisplayCurrentFace();  
+                DisplayMenu();                  
+                TakePlayerInput();              
+
+
+
             }
-
-
-
-            Console.ReadLine();             // pause and keep window open for testing
         }
 
         static void DisplayIntro()
@@ -48,10 +48,9 @@ namespace FaceMaker
             Console.WriteLine("           oOO                         OOo           ");
             Console.WriteLine("               oOO                 OOo               ");
             Console.WriteLine("                   ooo OOO OOO ooo                   ");
-            Console.WriteLine("                                                     ");
 
             Console.ReadLine();
-        }
+        }           
 
         static void DisplayMenu()
         {
@@ -62,25 +61,27 @@ namespace FaceMaker
             Console.WriteLine(" [5] Change your face's Mouth.");
             Console.WriteLine(" [6] Change your face's Chin.");
             Console.WriteLine(" [7] Start over with a blank face.");
-            
-            Console.ReadLine();
-
-
-            // Options (Each should call methods in face)
-
-            // Clear Face -- blanks face out and reloads
-            // Random Face -- pulls a random number for each face possibility and reloads
-
-            // each of these launches a method which changes the screen to a choose your whatever 
-
-            // Change Hair
-            // Change Eyes
-            // Change Nose
-            // Change Mouth
-            // Change Chin
-
         }
 
+        static char TakePlayerInput()
+        {
+            char playerInput;
+            bool isInputValid = false;
+
+            while (!isInputValid)
+            {
+                isInputValid = char.TryParse(Console.ReadLine(), out playerInput);
+                if (playerInput != '1' && playerInput != '2' && playerInput != '3' && playerInput != '4' && playerInput != '5' && playerInput != '6' && playerInput != '7')
+                {
+                    isInputValid = false;
+                }
+                else
+                {
+                    return playerInput;
+                }
+            }
+            return '0';
+        }
 
     }
 }
