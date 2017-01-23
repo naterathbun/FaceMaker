@@ -169,7 +169,6 @@ namespace FaceMaker.Classes
             SetChin(currentFace[4]);
         }
 
-
         public void SetHair(int choice)
         {
             switch (choice)
@@ -220,9 +219,9 @@ namespace FaceMaker.Classes
                     break;
                 case 1:
                     faceEyesArray[0] = "      oOO                                   OOo      ";
-                    faceEyesArray[1] = "    oOO        |-----|          |-----|       OOo    ";
-                    faceEyesArray[2] = "   oOO/--------|  O  |----------|  O  |--------\\OOo   ";
-                    faceEyesArray[3] = "  oOO          |-----|          |-----|         OOo  ";
+                    faceEyesArray[1] = "    oOO       |-----|           |-----|       OOo    ";
+                    faceEyesArray[2] = "   oOO/-------|  O  |-----------|  O  |-------\\OOo   ";
+                    faceEyesArray[3] = "  oOO         |-----|           |-----|         OOo  ";
                     faceEyesArray[4] = " oOO                                             OOo ";
                     break;
                 case 2:
@@ -291,11 +290,11 @@ namespace FaceMaker.Classes
             switch (choice)
             {
                 case 0:
-                    faceMouthArray[0] = "  oOO                ___________                OOo  ";
-                    faceMouthArray[1] = "   oOO              /           \\              OOo   ";
-                    faceMouthArray[2] = "    oOO             >-----------<             OOo    ";
+                    faceMouthArray[0] = "  oOO                ____   ____                OOo  ";
+                    faceMouthArray[1] = "   oOO              /    \\_/    \\              OOo   ";
+                    faceMouthArray[2] = "    oOO            >-------------<            OOo    ";
                     faceMouthArray[3] = "      oOO           \\___________/           OOo      ";
-                    faceMouthArray[4] = "        oO                                OOo        ";
+                    faceMouthArray[4] = "        oOO                               OOo        ";
                     break;
                 case 1:
                     faceMouthArray[0] = "  oOO                 _ _ _ _ _                 OOo  ";
@@ -359,6 +358,5 @@ namespace FaceMaker.Classes
                     break;
             }
         }
-
     }
 }
