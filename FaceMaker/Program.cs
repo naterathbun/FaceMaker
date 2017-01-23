@@ -11,17 +11,17 @@ namespace FaceMaker
     {
         static void Main(string[] args)
         {
-            Face gameFace = new Face();         
+            Face gameFace = new Face();
+
             DisplayIntro();
 
-            while (true)                        // Main game loop
+            while (true)                        
             {
-                gameFace.DisplayCurrentFace();  
-                DisplayMenu();                  
-                TakePlayerInput();              
+                gameFace.DisplayCurrentFace();
 
+                DisplayMenu();
 
-
+                gameFace.ChangeFace(TakePlayerInput());
             }
         }
 
@@ -50,7 +50,7 @@ namespace FaceMaker
             Console.WriteLine("                   ooo OOO OOO ooo                   ");
 
             Console.ReadLine();
-        }           
+        }
 
         static void DisplayMenu()
         {
@@ -63,7 +63,7 @@ namespace FaceMaker
             Console.WriteLine(" [7] Start over with a blank face.");
         }
 
-        static char TakePlayerInput()
+        static int TakePlayerInput()
         {
             char playerInput;
             bool isInputValid = false;
@@ -77,7 +77,7 @@ namespace FaceMaker
                 }
                 else
                 {
-                    return playerInput;
+                    return int.Parse(playerInput.ToString()); // this is converting to int 50 for some reason
                 }
             }
             return '0';
