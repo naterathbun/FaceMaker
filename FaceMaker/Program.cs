@@ -11,17 +11,17 @@ namespace FaceMaker
     {
         static void Main(string[] args)
         {
-            Face gameFace = new Face();
+            Face gameFace = new Face();                     // Set up game object
 
-            DisplayIntro();
+            DisplayIntro();                                 // Intro screen
 
-            while (true)                        
+            while (true)                                    // Game Loop
             {
-                gameFace.DisplayCurrentFace();
+                gameFace.DisplayCurrentFace();              // Draw the latest face
 
-                DisplayMenu();
+                DisplayMenu();                              // Show commands list
 
-                gameFace.ChangeFace(TakePlayerInput());
+                gameFace.ChangeFace(TakePlayerInput());     // Take, validate player input and update face info
             }
         }
 
@@ -49,7 +49,7 @@ namespace FaceMaker
             Console.WriteLine("               oOO                 OOo               ");
             Console.WriteLine("                   ooo OOO OOO ooo                   ");
 
-            Console.ReadLine();
+            Console.ReadLine();                 // press enter to continue
         }
 
         static void DisplayMenu()

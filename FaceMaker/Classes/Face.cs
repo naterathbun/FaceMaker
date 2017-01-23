@@ -14,12 +14,12 @@ namespace FaceMaker.Classes
         private string[] faceMouthArray = new string[5];
         private string[] faceChinArray = new string[3];
         private int[] currentFace = new int[5];                 // Keeps record of current face piece ID for each slot
-        Random faceRandom = new Random();
+        Random faceRandom = new Random();                       // Seed random number for SetFaceToRandom()
 
-        public Face()                                           // Constructor
+        public Face()
         {
             SetFaceToBlank();
-        }
+        }                                        // Constructor
 
         public void DisplayCurrentFace()
         {
@@ -49,7 +49,7 @@ namespace FaceMaker.Classes
             {
                 Console.WriteLine(faceChinArray[i]);
             }
-        }
+        }                     // Draw the current face
 
         public void ChangeFace(int choice)
         {
@@ -77,7 +77,7 @@ namespace FaceMaker.Classes
                     SetFaceToBlank();
                     break;
             }
-        }
+        }                   
 
         public void SetFaceToBlank()
         {
@@ -86,7 +86,7 @@ namespace FaceMaker.Classes
             SetNose(0);
             SetMouth(0);
             SetChin(0);
-        }
+        }                         // Reset to default face features
 
         public void SetFaceToRandom()
         {
@@ -109,7 +109,7 @@ namespace FaceMaker.Classes
             randomZeroToFive = faceRandom.Next(0, 5);
             currentFace[4] = randomZeroToFive;
             SetChin(randomZeroToFive);
-        }
+        }                        // Randomize each feature
 
         public void NextHair()
         {
@@ -119,7 +119,7 @@ namespace FaceMaker.Classes
                 currentFace[0] = 0;
             }
             SetHair(currentFace[0]);
-        }
+        }                               
 
         public void NextEyes()
         {
@@ -129,7 +129,7 @@ namespace FaceMaker.Classes
                 currentFace[1] = 0;
             }
             SetEyes(currentFace[1]);
-        }
+        }       
 
         public void NextNose()
         {
