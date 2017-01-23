@@ -13,8 +13,8 @@ namespace FaceMaker.Classes
         private string[] faceNoseArray = new string[4];
         private string[] faceMouthArray = new string[5];
         private string[] faceChinArray = new string[3];
-
         private int[] currentFace = new int[5];                 // Keeps record of current face piece ID for each slot
+        Random faceRandom = new Random();
 
         public Face()                                           // Constructor
         {
@@ -90,33 +90,25 @@ namespace FaceMaker.Classes
 
         public void SetFaceToRandom()
         {
-            Random faceRandom = new Random();
-            int randomTimes = faceRandom.Next(0, 5);
+            int randomZeroToFive = faceRandom.Next(0, 5);
+            currentFace[0] = randomZeroToFive;
+            SetHair(randomZeroToFive);
 
-            for (int i = 0; i < randomTimes; i++)
-            {
-                NextHair();
-            }
-            randomTimes = faceRandom.Next(0, 5);
-            for (int i = 0; i < randomTimes; i++)
-            {
-                NextEyes();
-            }
-            randomTimes = faceRandom.Next(0, 5);
-            for (int i = 0; i < randomTimes; i++)
-            {
-                NextNose();
-            }
-            randomTimes = faceRandom.Next(0, 5);
-            for (int i = 0; i < randomTimes; i++)
-            {
-                NextMouth();
-            }
-            randomTimes = faceRandom.Next(0, 5);
-            for (int i = 0; i < randomTimes; i++)
-            {
-                NextChin();
-            }
+            randomZeroToFive = faceRandom.Next(0, 5);
+            currentFace[1] = randomZeroToFive;
+            SetEyes(randomZeroToFive);
+
+            randomZeroToFive = faceRandom.Next(0, 5);
+            currentFace[2] = randomZeroToFive;
+            SetNose(randomZeroToFive);
+
+            randomZeroToFive = faceRandom.Next(0, 5);
+            currentFace[3] = randomZeroToFive;
+            SetMouth(randomZeroToFive);
+
+            randomZeroToFive = faceRandom.Next(0, 5);
+            currentFace[4] = randomZeroToFive;
+            SetChin(randomZeroToFive);
         }
 
         public void NextHair()
