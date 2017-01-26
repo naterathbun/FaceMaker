@@ -114,7 +114,7 @@ namespace FaceMaker.Classes
         public void NextHair()
         {
             currentFace[0]++;
-            if (currentFace[0] > 4)
+            if (currentFace[0] > 5)
             {
                 currentFace[0] = 0;
             }
@@ -195,6 +195,13 @@ namespace FaceMaker.Classes
                     faceHairArray[2] = "        |||||||||||||||||||||||||||||||||||||        ";
                     faceHairArray[3] = "        |||||||||||||||||||||||||||||||||||||        ";
                     break;
+                case 5:
+                    faceHairArray[0] = "                   _______________                   ";
+                    faceHairArray[1] = "              ____/               \\____              ";
+                    faceHairArray[2] = "          ___/    Cleveland Browns     \\___          ";
+                    faceHairArray[3] = "      ___/_________________________________\\___      ";
+                    break;
+
             }
         }
 
